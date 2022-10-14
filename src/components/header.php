@@ -1,0 +1,11 @@
+<header>
+    <h1>dimiblog</h1>
+    <nav>
+      <ul>
+        <li>Pouette</li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+  </header>
