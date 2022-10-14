@@ -19,3 +19,5 @@ services:
       POSTGRES_DB: blog
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
+    volumes:
+      - ./postgres/blog.sql:/docker-entrypoint-initdb.d/blog.sql
