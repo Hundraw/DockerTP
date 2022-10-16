@@ -1,31 +1,38 @@
 <?php
+
 /** Abstract Model class to be extended with other Model classes */
-abstract class _Model {
-  protected $db;
-  protected $table;
-  /**
-   * Default contructor
-   * @param Controler $db - Controler object that connect database.
-   * @param string    $table - Table name.
-   */
-  public function __construct(object $db, string $table) {
-    $this->db = $db;
-    $this->table = $table;
-  }
+abstract class Model
+{
+    protected $db;
+    protected $table;
 
-  /**
-   * Get all table row.
-   */
-  public function getAll() {
-    return $this->db->query("SELECT * FROM {$this->table}");
-  }
+    /**
+     * Default constructor
+     * @param object $db - Controller object that connect database.
+     * @param string $table - Table name.
+     */
+    public function __construct(object $db, string $table)
+    {
+        $this->db = $db;
+        $this->table = $table;
+    }
 
-  /**
-   * Get row data by id.
-   * @param string $id - Id of row you want to get
-   */
-  public function getById(string $id) {
-    return $this->db->query("SELECT * FROM {$this->table} WHERE id = '{$id}'");
-  }
+    /**
+     * Get all table row.
+     */
+    public function getAll()
+    {
+        return $this->db->query("SELECT * FROM {$this->table}");
+    }
+
+    /**
+     * Get row data by id.
+     * @param string $id - ID of row you want to get
+     */
+    public function getById(string $id)
+    {
+        return $this->db->query("SELECT * FROM {$this->table} WHERE id = '{$id}'");
+    }
 }
+
 ?>
