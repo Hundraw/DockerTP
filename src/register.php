@@ -1,10 +1,21 @@
+<?php
+    require_once './controllers/Controller.php';
+    require_once './models/Users.php';
+
+    $controller = new Controller();
+    $users = new Users($controller->db);
+
+    if (!empty($_POST['email']) && !empty($_POST['name'] && !empty($_POST['password']))) {
+     $users->addUser(
+       $_POST['email'], $_POST['name'],
+       password_hash($_POST['password'], PASSWORD_DEFAULT)
+     );
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <?php
-   require_once './controlers/Controler.php';
-   require_once('./models/Users.php');
-  ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,16 +37,5 @@
       <input type="submit">
     </form>
   </fieldset>
-
-  <?php
-    $controler = new Controler();
-    $users = new Users($controler->db);
-    if (!empty($_POST['email']) && !empty($_POST['name'] && !empty($_POST['password']))) {
-      $users->addUser(
-        $_POST['email'], $_POST['name'],
-        password_hash($_POST['password'], PASSWORD_DEFAULT)
-      );
-    }
-  ?>
 </body>
 </html>

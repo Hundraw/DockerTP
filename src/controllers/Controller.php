@@ -1,5 +1,5 @@
 <?php
-class Controler {
+class Controller {
   private static $dbHost = 'db';
   private static $dbName = 'blog';
   private static $dbUser = 'root';
