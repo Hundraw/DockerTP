@@ -1,4 +1,5 @@
 <?php
+require_once 'Model.php';
 
 /** Users model */
 class Users extends Model
@@ -21,10 +22,9 @@ class Users extends Model
     public function addUser(string $id, string $name, string $password)
     {
         $this->db->query(<<<EOT
-      INSERT INTO {$this->table}(id, name, password, role_id) 
-      VALUES ('{$id}', '{$name}', '{$password}', 2)
-    EOT
-        );
+          INSERT INTO {$this->table}(id, name, password, role_id) 
+          VALUES ('{$id}', '{$name}', '{$password}', 2)
+        EOT);
     }
 }
 
