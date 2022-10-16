@@ -1,9 +1,16 @@
 <?php
-require_once('Model.php');
 
-class Article extends _Model {
-  public function __construct(object $db){
-    parent::__construct($db, 'article');
-  }
+/** Article model */
+class Article extends Model
+{
+    /**
+     * Default constructor.
+     * @param object $db - Controller database.
+     */
+    public function __construct(object $db)
+    {
+        parent::__construct($db, 'article');
+    }
 }
+
 ?>
